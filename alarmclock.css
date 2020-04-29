@@ -1,7 +1,7 @@
 body {
-  background-color:#34d9eb
+  background-color: #34d9eb
 }
-
+/* This initializes the webpage - size, margins, and color */
 .page {
   width: 80%;
   max-width: 960px;
@@ -10,7 +10,7 @@ body {
   background-color: #34d9eb;
   border-radius: 5px;
 }
-
+/* this sets the font, color, and margins for the body, headers, and alarm clock on the webpage*/
 body {
   font: 14px/26px 'Bungee', Helvetica, Arial, sans-serif;
   color: #222;
@@ -70,7 +70,7 @@ blockquote:after {
 #wakeUpTimeSelector, #lunchTimeSelector, #napTimeSelector {
   padding: 10px 0;
 }
-
+/* initializes the the party time button - color, size */
 #partyTimeButton {
   background-color: #222;
   width: 300px;
