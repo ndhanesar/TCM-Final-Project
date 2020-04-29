@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Final Project</title>
+  <title>TCM Giphy Alarm Clock</title>
   <script src="libraries/p5.js"></script>
   <script src="libraries/p5.dom.js"></script>
   <script src="libraries/p5.sound.js"></script>
@@ -14,10 +13,9 @@
 <body>
 
   <html>
-
   <head>
     <title>DON'T BE ALARMED</title>
-
+<! this is where the fonts used for webpage are sourced/pulled from>
     <link href="https://fonts.googleapis.com/css?family=Bungee|Bungee+Shade|Covered+By+Your+Grace" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:800" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="alarmclock.css">
@@ -26,19 +24,22 @@
   <body>
     <div class="page">
       <header>
-        <h1>DON'T BE ALARMED</h1>
+  <!makes the title of the clock "Don't Be Alarmed!">
+        <h1>DON'T BE ALARMED!</h1>
       </header>
 
       <h4>
+  <!makes the second header of the clock "I'm just a clock!>
         I'M JUST A CLOCK! <br>
+  <!where the clock is inputted and appears>
         <span id="clock">Clock goes here</span>
       </h4>
-
+  <!default picture for the alarm clock>
       <img id="alarmImage" src="https://media.giphy.com/media/5bdgsd3ChyajOVN0rl/giphy.gif" alt="alarm">
-
+  <!shows the time event that corresponds to the current time (ex: good morning!)>
       <blockquote id="timeEvent">This is where time events are reported</blockquote>
 
-
+  <!creates the options for the wake up selector>
       set Wake Up Time
       <select id="wakeUpTimeSelector">
         <option value="1">1 AM - 2AM</option>
@@ -67,6 +68,7 @@
         <option value="24">12 AM - 1AM</option>
       </select>
       <br>
+  <!creates the options for the lunch time selector>
       set Lunch Time
       <select id="lunchTimeSelector">
         <option value="1">1 AM - 2AM</option>
@@ -95,6 +97,7 @@
         <option value="24">12 AM - 1AM</option>
       </select>
       <br>
+    <!creates the options for the nap time selector>
       set Nap Time
       <select id="napTimeSelector">
         <option value="1">1 AM - 2AM</option>
@@ -124,12 +127,12 @@
       </select>
       <br>
       <button id="partyTimeButton">Party!</button>
-
+    <!puts our names at the bottom of the program>
       <footer>
         <p>Nishta Dhanesar and Sydney Zirlin TCM 2020</p>
       </footer>
     </div>
-
+    <!tells the program to pull from our java script file">
     <script type="text/javascript" src="alarmclock.js"></script>
   </body>
 
