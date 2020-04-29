@@ -1,15 +1,16 @@
+//sets initial variable value
 var wakeuptime = 7;
 var noon = 12;
 var lunchtime = 12;
-var naptime = lunchtime + 2;
+var naptime = lunchtime + 3;
 var partytime;
-var evening = 18;
+var nighttime = 18;
 
-// Getting it to show the current time on the page
+// Shows the current time on the webpage
 var showCurrentTime = function() {
-  // display the string on the webpage
-  var clock = document.getElementById('clock');
 
+//Shows the string on the webpage
+  var clock = document.getElementById('clock');
   var currentTime = new Date();
 
   var hours = currentTime.getHours();
@@ -17,7 +18,7 @@ var showCurrentTime = function() {
   var seconds = currentTime.getSeconds();
   var meridian = "AM";
 
-  // Set hours
+// Set hours
   if (hours >= noon) {
     meridian = "PM";
   }
@@ -26,23 +27,23 @@ var showCurrentTime = function() {
     hours = hours - 12;
   }
 
-  // Set Minutes
+// Set Minutes
   if (minutes < 10) {
     minutes = "0" + minutes;
   }
 
-  // Set Seconds
+// Set Seconds
   if (seconds < 10) {
     seconds = "0" + seconds;
   }
 
-  // put together the string that displays the time
-  var clockTime = hours + ':' + minutes + ':' + seconds + " " + meridian + "!";
+//This puts together the string that will display the time
+  var clockTime = hours + ':' + minutes + ':' + seconds + " " + meridian;
 
   clock.innerText = clockTime;
 };
 
-// Getting the clock to increment on its own and change out messages and pictures
+// This will update the clock with the corresponding gifs and messages
 var updateClock = function() {
   var time = new Date().getHours();
   var messageText;
@@ -50,30 +51,37 @@ var updateClock = function() {
 
   var timeEventJS = document.getElementById("timeEvent");
   var alarmImageJS = document.getElementById('alarmImage');
-
+//if party time button is pressed, then minions party gif will appear and say "Woo Let's Party!"
   if (time == partytime) {
     image = "https://media.giphy.com/media/3KC2jD2QcBOSc/giphy.gif";
-    messageText = "Let's party!";
+    messageText = "Woo Let's party!";
+//if the selected wake up time is equal to the current time, then wake up gif will appear and say "Time to Wake Up!"
   } else if (time == wakeuptime) {
     image = "https://media.giphy.com/media/5bdgsd3ChyajOVN0rl/giphy.gif";
-    messageText = "Wake up!";
+    messageText = "Time to Wake Up!";
+//if the selected lunch time is equal to the current time, then the simpsons lunch gif will appear and say "Ready to Eat?"
   } else if (time == lunchtime) {
     image = "https://media.giphy.com/media/eH3Ra3DUp3tMylXedo/giphy.gif";
-    messageText = "Let's have some lunch!";
+    messageText = "Ready to Eat?";
+//if the selected nap time is equal to the current time, then the nap gif will appear and say "Sleep Tight!"
   } else if (time == naptime) {
     image = "https://media.giphy.com/media/HwmDZaI4YEeZ2/giphy.gif";
-    messageText = "Sleep tight!";
+    messageText = "Sleep Tight!";
+//if the current time is before noon, then the morning gif will appear and say "Good Morning!"
   } else if (time < noon) {
     image = "https://media.giphy.com/media/ArGV73SzOI2eQ/giphy.gif";
-    messageText = "Good morning!";
-  } else if (time >= evening) {
+    messageText = "Good Morning!";
+//if the current time is after 6pm, then the night time gif will appear and say "Good Evening!"
+  } else if (time >= nighttime) {
     image = "https://media.giphy.com/media/OjmrBW4ZQbWjkq6RkC/giphy.gif";
-    messageText = "Good evening!";
+    messageText = "Good Evening!";
+//if it is after 12pm, but before 6pm and the above conditions do not apply, then the afternoon gif will appear and say "Good Afternoon!"
   } else {
     image = "https://media.giphy.com/media/jj7MFG6lyZ8UU/giphy.gif";
-    messageText = "Good afternoon!";
+    messageText = "Good Afternoon!";
   }
 
+//displays the gif and message that correspond to the specific time
   console.log(messageText);
   timeEventJS.innerText = messageText;
   alarmImage.src = image;
@@ -82,12 +90,12 @@ var updateClock = function() {
 };
 updateClock();
 
-// Getting the clock to increment once a second
+// This makes the clock change every second
 var oneSecond = 1000;
 setInterval(updateClock, oneSecond);
 
 
-// Getting the Party Time Button To Work
+// This makes the Party Time button work
 var partyButton = document.getElementById("partyTimeButton");
 
 var partyEvent = function() {
@@ -106,7 +114,7 @@ partyButton.addEventListener("click", partyEvent);
 partyEvent();
 
 
-// Activates Wake-Up selector
+// This makes the wake up time selector work
 var wakeUpTimeSelector = document.getElementById("wakeUpTimeSelector");
 
 var wakeUpEvent = function() {
@@ -116,7 +124,7 @@ var wakeUpEvent = function() {
 wakeUpTimeSelector.addEventListener("change", wakeUpEvent);
 
 
-// Activates Lunch selector
+// This makes the lunch time selector work
 var lunchTimeSelector = document.getElementById("lunchTimeSelector");
 
 var lunchEvent = function() {
@@ -126,7 +134,7 @@ var lunchEvent = function() {
 lunchTimeSelector.addEventListener("change", lunchEvent);
 
 
-// Activates Nap-Time selector
+// This makes the nap time selector work
 var napTimeSelector = document.getElementById("napTimeSelector");
 
 var napEvent = function() {
