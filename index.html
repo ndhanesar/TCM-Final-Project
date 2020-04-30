@@ -3,10 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TCM Giphy Alarm Clock</title>
-  <script src="libraries/p5.js"></script>
-  <script src="libraries/p5.dom.js"></script>
-  <script src="libraries/p5.sound.js"></script>
+  <title>TCM Giphy Clock</title>
+  <!Links directly to the formatting from our css file>
   <link href="styles/alarmclock.css" type="text/css" rel="stylesheet">
 </head>
 
@@ -36,6 +34,7 @@
       </h4>
   <!default picture for the alarm clock>
       <img id="alarmImage" src="https://media.giphy.com/media/5bdgsd3ChyajOVN0rl/giphy.gif" alt="alarm">
+      <loadSound id="wakeupalarm.mp3">
   <!shows the time event that corresponds to the current time (ex: good morning!)>
       <blockquote id="timeEvent">This is where time events are reported</blockquote>
 
@@ -127,12 +126,13 @@
       </select>
       <br>
       <button id="partyTimeButton">Party!</button>
+
     <!puts our names at the bottom of the program>
       <footer>
         <p>Nishta Dhanesar and Sydney Zirlin TCM 2020</p>
       </footer>
     </div>
-    <!tells the program to pull from our java script file">
+    <!tells the program to pull from our javascript file">
     <script type="text/javascript" src="alarmclock.js"></script>
   </body>
 
