@@ -103,16 +103,16 @@ var partyEvent = function() {
     partytime = new Date().getHours();
     partyTimeButton.innerText = "Party Over!";
     partyTimeButton.style.backgroundColor = "#0A8DAB";
+
   } else {
     partytime = -1;
     partyTimeButton.innerText = "Party Time!";
     partyTimeButton.style.backgroundColor = "#222";
   }
 };
-
+//activates party mode on the click
 partyButton.addEventListener("click", partyEvent);
 partyEvent();
-
 
 // This makes the wake up time selector work
 var wakeUpTimeSelector = document.getElementById("wakeUpTimeSelector");
